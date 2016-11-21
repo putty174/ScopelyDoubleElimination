@@ -13,8 +13,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Team1"
-        android:id="@+id/team1"
+        android:text="Round1"
+        android:id="@+id/round1"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -29,14 +29,32 @@
         android:id="@+id/play"
         android:onClick="PlayButtonClick" />
 
-        <TextView
-            android:text="Team2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/team1"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/team2" />
+    <TextView
+        android:text="Round2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/round2"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="150dp"
+        android:layout_marginStart="150dp" />
+
+    <TextView
+        android:text="Round3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="300dp"
+        android:layout_marginStart="300dp"
+        android:id="@+id/round3" />
+
+    <TextView
+        android:text="Round4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/round4" />
     <!--
             <TextView
                 android:text="Team3"

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ScopelyDoubleElimination</string>
+    <string name="round1">Round1</string>
+    <string name="round2">Round2</string>
+    <string name="round3">Round3</string>
+    <string name="round4">Round4</string>
 </resources>
