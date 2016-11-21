@@ -38,14 +38,14 @@ public class URLDownload extends AsyncTask<String, String, String> {
 
     @Override
     protected String doInBackground(String... params){
-        InputStream input = null;
+        InputStream inputStream = null;
         BufferedReader inputBufferedReader = null;
         try {
             URL targetURL = new URL("https://s3.amazonaws.com/misc-withbuddies.com/ClientChallenge/client-data-file.json");
-            input = new BufferedInputStream(targetURL.openStream());
+            inputStream = new BufferedInputStream(targetURL.openStream());
 
             StringBuffer inputStringBuffer = new StringBuffer();
-            inputBufferedReader = new BufferedReader(new InputStreamReader(input));
+            inputBufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 
             String incomingString = "";
             while((incomingString = inputBufferedReader.readLine()) != null) {
@@ -66,9 +66,9 @@ public class URLDownload extends AsyncTask<String, String, String> {
             throw new RuntimeException(e);
         }
         finally {
-            if(input != null) {
+            if(inputStream != null) {
                 try {
-                    input.close();
+                    inputStream.close();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
