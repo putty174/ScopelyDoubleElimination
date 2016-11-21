@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 int id = getResources().getIdentifier(String.format("round%d", roundIndex + 2), "id", this.getPackageName());
                 TextView nextRound = (TextView) findViewById(id);
-                nextRound.setText("");
+                nextRound.setText(String.format("Round%d", roundIndex + 2) + "\n");
                 for (JSONObject winningTeam : bracketRounds.get(roundIndex + 1)) {
                     nextRound.setText(nextRound.getText() + winningTeam.optString("name") + "\n");
                 }
@@ -103,13 +103,13 @@ public class MainActivity extends AppCompatActivity {
             Collections.shuffle(bracketRounds.get(roundIndex));
 
             TextView round1 = (TextView) findViewById(R.id.round1);
-            round1.setText("");
+            round1.setText(getString(R.string.round1) + "\n");
             TextView round2 = (TextView) findViewById(R.id.round2);
-            round2.setText("");
+            round2.setText(getString(R.string.round2) + "\n");
             TextView round3 = (TextView) findViewById(R.id.round3);
-            round3.setText("");
+            round3.setText(getString(R.string.round3) + "\n");
             TextView round4 = (TextView) findViewById(R.id.round4);
-            round4.setText("");
+            round4.setText(getString(R.string.round4) + "\n");
 
             for (JSONObject team : bracketRounds.get(roundIndex)) {
                 round1.setText(round1.getText() + team.optString("name") + "\n");
@@ -125,7 +125,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void showResetDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Team X Wins\nReset bracket?").setPositiveButton("yes", new DialogInterface.OnClickListener() {
+        builder.setMessage(String.format(getString(R.string.resetprompt), bracketRounds.get(roundIndex).get(0).optString("name")))
+                .setPositiveButton("yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 InitializeBracket();

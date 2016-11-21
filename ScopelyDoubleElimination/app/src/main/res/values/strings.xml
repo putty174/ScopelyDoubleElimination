@@ -4,4 +4,6 @@
     <string name="round2">Round2</string>
     <string name="round3">Round3</string>
     <string name="round4">Round4</string>
+    <string name="teamselectprompt">Who should win?</string>
+    <string name="resetprompt">Team %s was the tournament winner!! Play again?</string>
 </resources>
